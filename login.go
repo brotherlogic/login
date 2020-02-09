@@ -11,6 +11,7 @@ import (
 	"google.golang.org/grpc"
 
 	pbg "github.com/brotherlogic/goserver/proto"
+	pb "github.com/brotherlogic/login/proto"
 )
 
 //Server main server type
@@ -28,7 +29,7 @@ func Init() *Server {
 
 // DoRegister does RPC registration
 func (s *Server) DoRegister(server *grpc.Server) {
-	// Pass
+	pb.RegisterLoginServiceServer(server, s)
 }
 
 // ReportHealth alerts if we're not healthy
