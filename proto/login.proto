@@ -15,7 +15,14 @@ message AuthenticateRequest {
 message AuthenticateResponse {
 }
 
+message LoginRequest{
+  string token = 1;
+}
 
-service AddRecordService {
+message LoginResponse {
+}
+
+service LoginService {
   rpc Authenticate(AuthenticateRequest) returns (AuthenticateResponse) {};
+  rpc Login(LoginRequest) returns (LoginResponse) {};
 }

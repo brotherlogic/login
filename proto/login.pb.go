@@ -147,16 +147,88 @@ func (m *AuthenticateResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_AuthenticateResponse proto.InternalMessageInfo
 
+type LoginRequest struct {
+	Token                string   `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *LoginRequest) Reset()         { *m = LoginRequest{} }
+func (m *LoginRequest) String() string { return proto.CompactTextString(m) }
+func (*LoginRequest) ProtoMessage()    {}
+func (*LoginRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_67c21677aa7f4e4f, []int{3}
+}
+
+func (m *LoginRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_LoginRequest.Unmarshal(m, b)
+}
+func (m *LoginRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_LoginRequest.Marshal(b, m, deterministic)
+}
+func (m *LoginRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_LoginRequest.Merge(m, src)
+}
+func (m *LoginRequest) XXX_Size() int {
+	return xxx_messageInfo_LoginRequest.Size(m)
+}
+func (m *LoginRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_LoginRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_LoginRequest proto.InternalMessageInfo
+
+func (m *LoginRequest) GetToken() string {
+	if m != nil {
+		return m.Token
+	}
+	return ""
+}
+
+type LoginResponse struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *LoginResponse) Reset()         { *m = LoginResponse{} }
+func (m *LoginResponse) String() string { return proto.CompactTextString(m) }
+func (*LoginResponse) ProtoMessage()    {}
+func (*LoginResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_67c21677aa7f4e4f, []int{4}
+}
+
+func (m *LoginResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_LoginResponse.Unmarshal(m, b)
+}
+func (m *LoginResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_LoginResponse.Marshal(b, m, deterministic)
+}
+func (m *LoginResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_LoginResponse.Merge(m, src)
+}
+func (m *LoginResponse) XXX_Size() int {
+	return xxx_messageInfo_LoginResponse.Size(m)
+}
+func (m *LoginResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_LoginResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_LoginResponse proto.InternalMessageInfo
+
 func init() {
 	proto.RegisterType((*User)(nil), "login.User")
 	proto.RegisterType((*AuthenticateRequest)(nil), "login.AuthenticateRequest")
 	proto.RegisterType((*AuthenticateResponse)(nil), "login.AuthenticateResponse")
+	proto.RegisterType((*LoginRequest)(nil), "login.LoginRequest")
+	proto.RegisterType((*LoginResponse)(nil), "login.LoginResponse")
 }
 
 func init() { proto.RegisterFile("login.proto", fileDescriptor_67c21677aa7f4e4f) }
 
 var fileDescriptor_67c21677aa7f4e4f = []byte{
-	// 193 bytes of a gzipped FileDescriptorProto
+	// 220 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0xce, 0xc9, 0x4f, 0xcf,
 	0xcc, 0xd3, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x05, 0x73, 0x94, 0xc2, 0xb9, 0x58, 0x42,
 	0x8b, 0x53, 0x8b, 0x84, 0x44, 0xb8, 0x58, 0x53, 0x73, 0x13, 0x33, 0x73, 0x24, 0x18, 0x15, 0x18,
@@ -165,11 +237,12 @@ var fileDescriptor_67c21677aa7f4e4f = []byte{
 	0x98, 0x15, 0x18, 0x35, 0x98, 0x83, 0x78, 0xc0, 0x82, 0x41, 0x10, 0x31, 0x25, 0x6d, 0x2e, 0x61,
 	0xc7, 0xd2, 0x92, 0x8c, 0xd4, 0xbc, 0x92, 0xcc, 0xe4, 0xc4, 0x92, 0xd4, 0xa0, 0xd4, 0xc2, 0xd2,
 	0xd4, 0xe2, 0x12, 0x84, 0x89, 0x8c, 0x48, 0x26, 0x2a, 0x89, 0x71, 0x89, 0xa0, 0x2a, 0x2e, 0x2e,
-	0xc8, 0xcf, 0x2b, 0x4e, 0x35, 0x8a, 0xe5, 0x12, 0x70, 0x4c, 0x49, 0x09, 0x4a, 0x4d, 0xce, 0x2f,
-	0x4a, 0x09, 0x4e, 0x2d, 0x2a, 0xcb, 0x4c, 0x4e, 0x15, 0xf2, 0xe4, 0xe2, 0x41, 0x56, 0x2b, 0x24,
-	0xa5, 0x07, 0xf1, 0x16, 0x16, 0xdb, 0xa4, 0xa4, 0xb1, 0xca, 0x41, 0x0c, 0x57, 0x62, 0x48, 0x62,
-	0x03, 0x07, 0x85, 0x31, 0x20, 0x00, 0x00, 0xff, 0xff, 0xc1, 0x5c, 0x48, 0xfd, 0x19, 0x01, 0x00,
-	0x00,
+	0xc8, 0xcf, 0x2b, 0x4e, 0x55, 0x52, 0xe1, 0xe2, 0xf1, 0x01, 0x39, 0x13, 0xbf, 0x6e, 0x7e, 0x2e,
+	0x5e, 0xa8, 0x2a, 0x88, 0x36, 0xa3, 0x7e, 0x46, 0xa8, 0xbe, 0xe0, 0xd4, 0xa2, 0xb2, 0xcc, 0xe4,
+	0x54, 0x21, 0x4f, 0x2e, 0x1e, 0x64, 0xf3, 0x85, 0xa4, 0xf4, 0x20, 0x41, 0x81, 0xc5, 0x85, 0x52,
+	0xd2, 0x58, 0xe5, 0xa0, 0x0e, 0x62, 0x10, 0x32, 0xe1, 0x62, 0x05, 0x1b, 0x2d, 0x24, 0x0c, 0x55,
+	0x87, 0xec, 0x40, 0x29, 0x11, 0x54, 0x41, 0x98, 0xae, 0x24, 0x36, 0x70, 0xa0, 0x1b, 0x03, 0x02,
+	0x00, 0x00, 0xff, 0xff, 0x45, 0x5b, 0x1a, 0x79, 0x83, 0x01, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -180,64 +253,97 @@ var _ grpc.ClientConn
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion4
 
-// AddRecordServiceClient is the client API for AddRecordService service.
+// LoginServiceClient is the client API for LoginService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type AddRecordServiceClient interface {
+type LoginServiceClient interface {
 	Authenticate(ctx context.Context, in *AuthenticateRequest, opts ...grpc.CallOption) (*AuthenticateResponse, error)
+	Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error)
 }
 
-type addRecordServiceClient struct {
+type loginServiceClient struct {
 	cc *grpc.ClientConn
 }
 
-func NewAddRecordServiceClient(cc *grpc.ClientConn) AddRecordServiceClient {
-	return &addRecordServiceClient{cc}
+func NewLoginServiceClient(cc *grpc.ClientConn) LoginServiceClient {
+	return &loginServiceClient{cc}
 }
 
-func (c *addRecordServiceClient) Authenticate(ctx context.Context, in *AuthenticateRequest, opts ...grpc.CallOption) (*AuthenticateResponse, error) {
+func (c *loginServiceClient) Authenticate(ctx context.Context, in *AuthenticateRequest, opts ...grpc.CallOption) (*AuthenticateResponse, error) {
 	out := new(AuthenticateResponse)
-	err := c.cc.Invoke(ctx, "/login.AddRecordService/Authenticate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/login.LoginService/Authenticate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// AddRecordServiceServer is the server API for AddRecordService service.
-type AddRecordServiceServer interface {
+func (c *loginServiceClient) Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error) {
+	out := new(LoginResponse)
+	err := c.cc.Invoke(ctx, "/login.LoginService/Login", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// LoginServiceServer is the server API for LoginService service.
+type LoginServiceServer interface {
 	Authenticate(context.Context, *AuthenticateRequest) (*AuthenticateResponse, error)
+	Login(context.Context, *LoginRequest) (*LoginResponse, error)
 }
 
-func RegisterAddRecordServiceServer(s *grpc.Server, srv AddRecordServiceServer) {
-	s.RegisterService(&_AddRecordService_serviceDesc, srv)
+func RegisterLoginServiceServer(s *grpc.Server, srv LoginServiceServer) {
+	s.RegisterService(&_LoginService_serviceDesc, srv)
 }
 
-func _AddRecordService_Authenticate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _LoginService_Authenticate_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AuthenticateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(AddRecordServiceServer).Authenticate(ctx, in)
+		return srv.(LoginServiceServer).Authenticate(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/login.AddRecordService/Authenticate",
+		FullMethod: "/login.LoginService/Authenticate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AddRecordServiceServer).Authenticate(ctx, req.(*AuthenticateRequest))
+		return srv.(LoginServiceServer).Authenticate(ctx, req.(*AuthenticateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _AddRecordService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "login.AddRecordService",
-	HandlerType: (*AddRecordServiceServer)(nil),
+func _LoginService_Login_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LoginRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LoginServiceServer).Login(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/login.LoginService/Login",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LoginServiceServer).Login(ctx, req.(*LoginRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+var _LoginService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "login.LoginService",
+	HandlerType: (*LoginServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Authenticate",
-			Handler:    _AddRecordService_Authenticate_Handler,
+			Handler:    _LoginService_Authenticate_Handler,
+		},
+		{
+			MethodName: "Login",
+			Handler:    _LoginService_Login_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
