@@ -68,7 +68,7 @@ func main() {
 	server.PrepServer()
 	server.Register = server
 
-	err := server.RegisterServerV2("login", true, false)
+	err := server.RegisterServerV2("login", false, false)
 	if err != nil {
 		return
 	}
