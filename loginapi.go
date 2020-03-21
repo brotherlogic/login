@@ -15,7 +15,7 @@ const (
 
 //Login logs us un
 func (s *Server) Login(ctx context.Context, req *pb.LoginRequest) (*pb.LoginResponse, error) {
-	s.Log(fmt.Sprintf("Processing  login request: %v", req))
+	s.Log(fmt.Sprintf("Processing  login request: %v", s.verifyToken(ctx, req.GetToken())))
 	return nil, fmt.Errorf("Not implemented yet")
 }
 
