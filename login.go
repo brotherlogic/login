@@ -60,12 +60,12 @@ func (s *Server) verifyToken(ctx context.Context, token string) string {
 	svc, err := oauth2.New(http.DefaultClient)
 	ti, err := svc.Tokeninfo().IdToken(token).Context(ctx).Do()
 	if err != nil {
-		return ""
+		return fmt.Sprintf("Err: %v", err)
 	}
 	if ti.VerifiedEmail {
 		return ti.Email
 	}
-	return ""
+	return "NotVerifiedEmail"
 }
 
 func main() {
