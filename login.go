@@ -65,7 +65,7 @@ func (s *Server) verifyToken(ctx context.Context, token string) string {
 	if ti.VerifiedEmail {
 		return ti.Email
 	}
-	return "NotVerifiedEmail"
+	return fmt.Sprintf("%+v", ti)
 }
 
 func main() {
