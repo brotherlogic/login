@@ -5,9 +5,11 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"net/http"
 
 	"github.com/brotherlogic/goserver"
 	"golang.org/x/net/context"
+	oauth2 "google.golang.org/api/oauth2/v1"
 	"google.golang.org/grpc"
 
 	pbg "github.com/brotherlogic/goserver/proto"
@@ -52,6 +54,18 @@ func (s *Server) GetState() []*pbg.State {
 	return []*pbg.State{
 		&pbg.State{Key: "no", Value: int64(233)},
 	}
+}
+
+func (s *Server) verifyToken(ctx context.Context, token string) string {
+	svc, err := oauth2.New(http.DefaultClient)
+	ti, err := svc.Tokeninfo().IdToken(token).Context(ctx).Do()
+	if err != nil {
+		return ""
+	}
+	if ti.VerifiedEmail {
+		return ti.Email
+	}
+	return ""
 }
 
 func main() {
