@@ -114,7 +114,7 @@ func main() {
 	server.PrepServer()
 	server.Register = server
 
-	err := server.RegisterServerV2("login", false, false)
+	err := server.RegisterServerV2("login", false, true)
 	if err != nil {
 		return
 	}
