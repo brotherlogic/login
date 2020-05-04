@@ -60,7 +60,7 @@ func (s *Server) verifyToken(ctx context.Context, token string) string {
 	svc, err := oauth2.New(http.DefaultClient)
 	ti, err := svc.Tokeninfo().IdToken(token).Context(ctx).Do()
 	if err != nil {
-		return fmt.Sprintf("Err: %v", err)
+		return fmt.Sprintf("Err for token %v: %v", token, err)
 	}
 	if ti.VerifiedEmail {
 		return ti.Email
