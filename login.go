@@ -7,13 +7,20 @@ import (
 	"log"
 	"net/http"
 
+	firebase "firebase.google.com/go"
 	"github.com/brotherlogic/goserver"
 	"golang.org/x/net/context"
 	oauth2 "google.golang.org/api/oauth2/v1"
+	"google.golang.org/api/option"
 	"google.golang.org/grpc"
 
 	pbg "github.com/brotherlogic/goserver/proto"
 	pb "github.com/brotherlogic/login/proto"
+)
+
+const (
+	//CONFIG where we store the config
+	CONFIG = "github.com/brotherlogic/login/config"
 )
 
 //Server main server type
@@ -56,7 +63,32 @@ func (s *Server) GetState() []*pbg.State {
 	}
 }
 
-func (s *Server) verifyToken(ctx context.Context, token string) string {
+func (s *Server) verifyFirebaseToken(ctx context.Context, tokenStr string) string {
+	opt := option.WithCredentialsFile("path/to/refreshToken.json")
+	config := &firebase.Config{ProjectID: "my-project-id"}
+	app, err := firebase.NewApp(ctx, config, opt)
+	if err != nil {
+		log.Fatalf("error initializing app: %v\n", err)
+	}
+
+	client, err := app.Auth(ctx)
+	if err != nil {
+		log.Fatalf("error getting Auth client: %v\n", err)
+	}
+
+	token, err := client.VerifyIDToken(ctx, tokenStr)
+	if err != nil {
+		log.Fatalf("error verifying ID token: %v\n", err)
+	}
+
+	return fmt.Sprintf("%v", token)
+}
+
+func (s *Server) verifyToken(ctx context.Context, token string, firebaseToken string) string {
+	if len(firebaseToken) > 0 {
+		return s.verifyFirebaseToken(ctx, firebaseToken)
+	}
+
 	svc, err := oauth2.New(http.DefaultClient)
 	ti, err := svc.Tokeninfo().IdToken(token).Context(ctx).Do()
 	if err != nil {

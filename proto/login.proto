@@ -8,6 +8,11 @@ message User {
   int64 token_refresh  = 3;
 }
 
+message Config {
+  repeated User users = 1;
+  string authToken = 2;
+}
+
 message AuthenticateRequest {
   string token = 1;
 }
@@ -17,12 +22,21 @@ message AuthenticateResponse {
 
 message LoginRequest{
   string token = 1;
+  string firebase_token = 2;
 }
 
 message LoginResponse {
 }
 
+message SetTokenRequest {
+  string token = 1;
+}
+
+message SetTokenResponse {
+}
+
 service LoginService {
   rpc Authenticate(AuthenticateRequest) returns (AuthenticateResponse) {};
   rpc Login(LoginRequest) returns (LoginResponse) {};
+  rpc SetToken(SetTokenRequest) returns (SetTokenResponse) {};
 }
