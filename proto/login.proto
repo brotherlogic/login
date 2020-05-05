@@ -10,7 +10,7 @@ message User {
 
 message Config {
   repeated User users = 1;
-  string authToken = 2;
+  string auth_token = 2;
 }
 
 message AuthenticateRequest {

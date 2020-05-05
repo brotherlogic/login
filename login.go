@@ -64,21 +64,31 @@ func (s *Server) GetState() []*pbg.State {
 }
 
 func (s *Server) verifyFirebaseToken(ctx context.Context, tokenStr string) string {
-	opt := option.WithCredentialsFile("path/to/refreshToken.json")
-	config := &firebase.Config{ProjectID: "my-project-id"}
+	data, _, err := s.KSclient.Read(ctx, CONFIG, &pb.Config{})
+	if err != nil {
+		s.Log(fmt.Sprintf("Err %v", err))
+		return ""
+	}
+	conf := data.(*pb.Config)
+
+	opt := option.WithCredentialsJSON([]byte(conf.GetAuthToken()))
+	config := &firebase.Config{ProjectID: "androidgetter-d1c08"}
 	app, err := firebase.NewApp(ctx, config, opt)
 	if err != nil {
-		log.Fatalf("error initializing app: %v\n", err)
+		s.Log(fmt.Sprintf("ERR : %v", err))
+		return ""
 	}
 
 	client, err := app.Auth(ctx)
 	if err != nil {
-		log.Fatalf("error getting Auth client: %v\n", err)
+		s.Log(fmt.Sprintf("ERR : %v", err))
+		return ""
 	}
 
 	token, err := client.VerifyIDToken(ctx, tokenStr)
 	if err != nil {
-		log.Fatalf("error verifying ID token: %v\n", err)
+		s.Log(fmt.Sprintf("ERR : %v", err))
+		return ""
 	}
 
 	return fmt.Sprintf("%v", token)
