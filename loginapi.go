@@ -27,7 +27,11 @@ func (s *Server) SetToken(ctx context.Context, req *pb.SetTokenRequest) (*pb.Set
 	if status.Convert(err).Code() != codes.NotFound && status.Convert(err).Code() != codes.OK {
 		return nil, err
 	}
-	config := data.(*pb.Config)
+
+	config := &pb.Config{}
+	if data != nil {
+		config = data.(*pb.Config)
+	}
 
 	config.AuthToken = req.GetToken()
 
