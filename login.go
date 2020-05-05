@@ -21,6 +21,9 @@ import (
 const (
 	//CONFIG where we store the config
 	CONFIG = "github.com/brotherlogic/login/config"
+
+	//USERS where we store users
+	USERS = "github.com/brotherlogic/login/users"
 )
 
 //Server main server type
@@ -91,7 +94,13 @@ func (s *Server) verifyFirebaseToken(ctx context.Context, tokenStr string) strin
 		return ""
 	}
 
-	return fmt.Sprintf("%v", token)
+	tok, err := s.getToken(ctx, token.Claims["email"].(string))
+	if err != nil {
+		s.Log(fmt.Sprintf("BAD TOKEN: %v", err))
+		return ""
+	}
+
+	return tok
 }
 
 func (s *Server) verifyToken(ctx context.Context, token string, firebaseToken string) string {
