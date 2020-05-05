@@ -35,5 +35,5 @@ func (s *Server) SetToken(ctx context.Context, req *pb.SetTokenRequest) (*pb.Set
 
 	config.AuthToken = req.GetToken()
 
-	return nil, s.KSclient.Save(ctx, CONFIG, config)
+	return &pb.SetTokenResponse{}, s.KSclient.Save(ctx, CONFIG, config)
 }
