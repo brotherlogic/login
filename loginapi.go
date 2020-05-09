@@ -12,8 +12,8 @@ import (
 
 //Login logs us un
 func (s *Server) Login(ctx context.Context, req *pb.LoginRequest) (*pb.LoginResponse, error) {
-	s.Log(fmt.Sprintf("Processing  login request: %v", s.verifyToken(ctx, req.GetToken(), req.GetFirebaseToken())))
-	return nil, fmt.Errorf("Not implemented yet")
+	token, err := s.verifyToken(ctx, req.GetToken(), req.GetFirebaseToken())
+	return &pb.LoginResponse{Token: token}, err
 }
 
 //Authenticate attempts to authenticate

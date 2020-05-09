@@ -66,11 +66,11 @@ func (s *Server) GetState() []*pbg.State {
 	}
 }
 
-func (s *Server) verifyFirebaseToken(ctx context.Context, tokenStr string) string {
+func (s *Server) verifyFirebaseToken(ctx context.Context, tokenStr string) (string, error) {
 	data, _, err := s.KSclient.Read(ctx, CONFIG, &pb.Config{})
 	if err != nil {
 		s.Log(fmt.Sprintf("Err %v", err))
-		return ""
+		return "", err
 	}
 	conf := data.(*pb.Config)
 
@@ -79,31 +79,31 @@ func (s *Server) verifyFirebaseToken(ctx context.Context, tokenStr string) strin
 	app, err := firebase.NewApp(ctx, config, opt)
 	if err != nil {
 		s.Log(fmt.Sprintf("ERR : %v", err))
-		return ""
+		return "", err
 	}
 
 	client, err := app.Auth(ctx)
 	if err != nil {
 		s.Log(fmt.Sprintf("ERR : %v", err))
-		return ""
+		return "", err
 	}
 
 	token, err := client.VerifyIDToken(ctx, tokenStr)
 	if err != nil {
 		s.Log(fmt.Sprintf("ERR : %v", err))
-		return ""
+		return "", err
 	}
 
 	tok, err := s.getToken(ctx, token.Claims["email"].(string))
 	if err != nil {
 		s.Log(fmt.Sprintf("BAD TOKEN: %v", err))
-		return ""
+		return "", err
 	}
 
-	return tok
+	return tok, nil
 }
 
-func (s *Server) verifyToken(ctx context.Context, token string, firebaseToken string) string {
+func (s *Server) verifyToken(ctx context.Context, token string, firebaseToken string) (string, error) {
 	if len(firebaseToken) > 0 {
 		return s.verifyFirebaseToken(ctx, firebaseToken)
 	}
@@ -111,12 +111,12 @@ func (s *Server) verifyToken(ctx context.Context, token string, firebaseToken st
 	svc, err := oauth2.New(http.DefaultClient)
 	ti, err := svc.Tokeninfo().IdToken(token).Context(ctx).Do()
 	if err != nil {
-		return fmt.Sprintf("Err for token %v: %v", token, err)
+		return fmt.Sprintf("Err for token %v: %v", token, err), err
 	}
 	if ti.VerifiedEmail {
-		return ti.Email
+		return ti.Email, nil
 	}
-	return fmt.Sprintf("%+v", ti)
+	return fmt.Sprintf("%+v", ti), nil
 }
 
 func main() {
