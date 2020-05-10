@@ -49,3 +49,32 @@ func TestAddRequestFail(t *testing.T) {
 		t.Errorf("Set Token passed: %v", val)
 	}
 }
+
+func TestAuthenticate(t *testing.T) {
+	s := InitTestServer()
+	tok, err := s.getToken(context.Background(), "brotherlogic@gmail.com")
+
+	_, err = s.Authenticate(context.Background(), &pb.AuthenticateRequest{Token: tok})
+	if err != nil {
+		t.Fatalf("Could not authenticate: %v", err)
+	}
+}
+
+func TestAuthenticateBad(t *testing.T) {
+	s := InitTestServer()
+
+	_, err := s.Authenticate(context.Background(), &pb.AuthenticateRequest{Token: "aha"})
+	if err == nil {
+		t.Fatalf("Authenticated with bad token")
+	}
+}
+
+func TestAuthenticateBadRead(t *testing.T) {
+	s := InitTestServer()
+	s.GoServer.KSclient.Fail = true
+
+	_, err := s.Authenticate(context.Background(), &pb.AuthenticateRequest{Token: "aha"})
+	if err == nil {
+		t.Errorf("Authenticate Passed despite bad read")
+	}
+}
