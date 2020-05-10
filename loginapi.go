@@ -18,7 +18,23 @@ func (s *Server) Login(ctx context.Context, req *pb.LoginRequest) (*pb.LoginResp
 
 //Authenticate attempts to authenticate
 func (s *Server) Authenticate(ctx context.Context, req *pb.AuthenticateRequest) (*pb.AuthenticateResponse, error) {
-	return nil, fmt.Errorf("Not implemented yet")
+	data, _, err := s.KSclient.Read(ctx, CONFIG, &pb.Config{})
+	if status.Convert(err).Code() != codes.NotFound && status.Convert(err).Code() != codes.OK {
+		return nil, err
+	}
+
+	config := &pb.Config{}
+	if data != nil {
+		config = data.(*pb.Config)
+	}
+
+	for _, user := range config.GetUsers() {
+		if user.GetToken() == req.GetToken() {
+			return &pb.AuthenticateResponse{}, nil
+		}
+	}
+
+	return nil, fmt.Errorf("Not able to authenticate this token")
 }
 
 //SetToken sets the firebase auth token
