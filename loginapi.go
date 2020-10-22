@@ -34,7 +34,7 @@ func (s *Server) Authenticate(ctx context.Context, req *pb.AuthenticateRequest) 
 		}
 	}
 
-	return nil, fmt.Errorf("Not able to authenticate this token")
+	return nil, fmt.Errorf("Not able to authenticate this token (%v)", req.GetToken())
 }
 
 //SetToken sets the firebase auth token
