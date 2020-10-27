@@ -148,5 +148,5 @@ func main() {
 		//		return
 	}
 
-	fmt.Printf("%v", server.Serve())
+	server.Serve()
 }
