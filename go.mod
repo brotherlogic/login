@@ -6,7 +6,7 @@ require (
 	cloud.google.com/go v0.103.0 // indirect
 	cloud.google.com/go/firestore v1.6.1 // indirect
 	firebase.google.com/go v3.13.0+incompatible
-	github.com/brotherlogic/goserver v0.0.0-20220701152051-89536e36c55b
+	github.com/brotherlogic/goserver v0.0.0-20220701161357-6e6af51b8553
 	github.com/brotherlogic/keystore v0.0.0-20220621052415-70ae78501e3c
 	github.com/golang/protobuf v1.5.2
 	golang.org/x/net v0.0.0-20220630215102-69896b714898
