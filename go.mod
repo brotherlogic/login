@@ -10,7 +10,7 @@ require (
 	github.com/brotherlogic/goserver v0.0.0-20220624154320-8468ddf22f08
 	github.com/brotherlogic/keystore v0.0.0-20220621052415-70ae78501e3c
 	github.com/golang/protobuf v1.5.2
-	golang.org/x/net v0.0.0-20220624214902-1bab6f366d9e
+	golang.org/x/net v0.0.0-20220630215102-69896b714898
 	golang.org/x/oauth2 v0.0.0-20220630143837-2104d58473e0 // indirect
 	golang.org/x/sys v0.0.0-20220627191245-f75cf1eec38b // indirect
 	google.golang.org/api v0.86.0
