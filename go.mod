@@ -11,6 +11,7 @@ require (
 	github.com/golang/protobuf v1.5.2
 	golang.org/x/net v0.0.0-20220630215102-69896b714898
 	golang.org/x/oauth2 v0.0.0-20220630143837-2104d58473e0 // indirect
+	golang.org/x/sys v0.0.0-20220701225701-179beb0bd1a1 // indirect
 	google.golang.org/api v0.86.0
 	google.golang.org/grpc v1.47.0
 	google.golang.org/protobuf v1.28.0
