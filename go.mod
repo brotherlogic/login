@@ -4,17 +4,18 @@ go 1.16
 
 require (
 	cloud.google.com/go v0.103.0 // indirect
+	cloud.google.com/go/compute v1.8.0 // indirect
 	cloud.google.com/go/firestore v1.6.1 // indirect
+	cloud.google.com/go/storage v1.25.0 // indirect
 	firebase.google.com/go v3.13.0+incompatible
-	github.com/brotherlogic/discovery v0.0.0-20220704142859-442f6aa6d37d // indirect
-	github.com/brotherlogic/gobuildslave v0.0.0-20220704150406-bf8b3e163f21 // indirect
-	github.com/brotherlogic/goserver v0.0.0-20220701161357-6e6af51b8553
-	github.com/brotherlogic/keystore v0.0.0-20220621052415-70ae78501e3c
+	github.com/brotherlogic/datastore v0.0.0-20220812180257-4c8dc33e044f // indirect
+	github.com/brotherlogic/goserver v0.0.0-20220802151516-4b60a60b3020
+	github.com/brotherlogic/keystore v0.0.0-20220808171152-90fd987cfec3
 	github.com/golang/protobuf v1.5.2
-	golang.org/x/net v0.0.0-20220630215102-69896b714898
-	golang.org/x/oauth2 v0.0.0-20220630143837-2104d58473e0 // indirect
-	golang.org/x/sys v0.0.0-20220704084225-05e143d24a9e // indirect
-	google.golang.org/api v0.86.0
-	google.golang.org/grpc v1.47.0
-	google.golang.org/protobuf v1.28.0
+	github.com/googleapis/gax-go/v2 v2.5.1 // indirect
+	golang.org/x/net v0.0.0-20220812174116-3211cb980234
+	golang.org/x/oauth2 v0.0.0-20220808172628-8227340efae7 // indirect
+	google.golang.org/api v0.92.0
+	google.golang.org/grpc v1.48.0
+	google.golang.org/protobuf v1.28.1
 )
