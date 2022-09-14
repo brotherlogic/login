@@ -69,7 +69,7 @@ func (s *Server) GetState() []*pbg.State {
 func (s *Server) verifyFirebaseToken(ctx context.Context, tokenStr string) (string, error) {
 	data, _, err := s.KSclient.Read(ctx, CONFIG, &pb.Config{})
 	if err != nil {
-		s.Log(fmt.Sprintf("Err %v", err))
+		s.CtxLog(ctx, fmt.Sprintf("Err %v", err))
 		return "", err
 	}
 	conf := data.(*pb.Config)
@@ -78,25 +78,25 @@ func (s *Server) verifyFirebaseToken(ctx context.Context, tokenStr string) (stri
 	config := &firebase.Config{ProjectID: "androidgetter-d1c08"}
 	app, err := firebase.NewApp(ctx, config, opt)
 	if err != nil {
-		s.Log(fmt.Sprintf("ERR : %v", err))
+		s.CtxLog(ctx, fmt.Sprintf("ERR : %v", err))
 		return "", err
 	}
 
 	client, err := app.Auth(ctx)
 	if err != nil {
-		s.Log(fmt.Sprintf("ERR : %v", err))
+		s.CtxLog(ctx, fmt.Sprintf("ERR : %v", err))
 		return "", err
 	}
 
 	token, err := client.VerifyIDToken(ctx, tokenStr)
 	if err != nil {
-		s.Log(fmt.Sprintf("ERR : %v", err))
+		s.CtxLog(ctx, fmt.Sprintf("ERR : %v", err))
 		return "", err
 	}
 
 	tok, err := s.getToken(ctx, token.Claims["email"].(string))
 	if err != nil {
-		s.Log(fmt.Sprintf("BAD TOKEN: %v", err))
+		s.CtxLog(ctx, fmt.Sprintf("BAD TOKEN: %v", err))
 		return "", err
 	}
 

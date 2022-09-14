@@ -21,7 +21,7 @@ func randString(n int) string {
 func (s *Server) getToken(ctx context.Context, email string) (string, error) {
 	data, _, err := s.KSclient.Read(ctx, CONFIG, &pb.Config{})
 	if err != nil {
-		s.Log(fmt.Sprintf("Err %v", err))
+		s.CtxLog(ctx, fmt.Sprintf("Err %v", err))
 		return "", err
 	}
 	conf := data.(*pb.Config)
