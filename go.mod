@@ -10,7 +10,7 @@ require (
 	firebase.google.com/go v3.13.0+incompatible
 	github.com/brotherlogic/goserver v0.0.0-20221202193151-b0b39691c212
 	github.com/brotherlogic/keystore v0.0.0-20221202164142-cbd0704b5c1f
-	github.com/brotherlogic/logging v0.0.0-20221202193700-ab45a01adda2 // indirect
+	github.com/brotherlogic/lock v0.0.0-20221202194244-976e9be84f7f // indirect
 	github.com/golang/protobuf v1.5.2
 	golang.org/x/net v0.2.0
 	golang.org/x/time v0.2.0 // indirect
