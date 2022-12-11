@@ -6,9 +6,9 @@ require (
 	cloud.google.com/go/compute v1.14.0 // indirect
 	cloud.google.com/go/storage v1.28.1 // indirect
 	firebase.google.com/go v3.13.0+incompatible
-	github.com/brotherlogic/githubcard v0.0.0-20221210201915-2f340042d948 // indirect
 	github.com/brotherlogic/goserver v0.0.0-20221202193151-b0b39691c212
 	github.com/brotherlogic/keystore v0.0.0-20221210190215-af3698c6a2c9
+	github.com/brotherlogic/lock v0.0.0-20221211025725-c7b14345e31e // indirect
 	github.com/golang/protobuf v1.5.2
 	github.com/googleapis/enterprise-certificate-proxy v0.2.1 // indirect
 	golang.org/x/net v0.4.0
