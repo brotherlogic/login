@@ -8,7 +8,7 @@ require (
 	firebase.google.com/go v3.13.0+incompatible
 	github.com/brotherlogic/goserver v0.0.0-20221217002224-0ba5c0213be1
 	github.com/brotherlogic/keystore v0.0.0-20221218025925-612b2a89a337
-	github.com/brotherlogic/lock v0.0.0-20221218032010-bc171297cf57 // indirect
+	github.com/brotherlogic/logging v0.0.0-20221218032924-6b3bdbb0dfa2 // indirect
 	github.com/golang/protobuf v1.5.2
 	github.com/googleapis/enterprise-certificate-proxy v0.2.1 // indirect
 	golang.org/x/net v0.4.0
