@@ -5,7 +5,7 @@ go 1.16
 require (
 	cloud.google.com/go/storage v1.35.1 // indirect
 	firebase.google.com/go v3.13.0+incompatible
-	github.com/brotherlogic/gobuildslave v0.0.0-20231118231505-effd15d0fd34 // indirect
+	github.com/brotherlogic/gobuildslave v0.0.0-20231119063224-519d7d97f316 // indirect
 	github.com/brotherlogic/goserver v0.0.0-20230726200050-779ae6811580
 	github.com/brotherlogic/keystore v0.0.0-20231112195839-4b61dfa63b0a
 	github.com/golang/protobuf v1.5.3
