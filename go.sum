@@ -1764,8 +1764,9 @@ github.com/brotherlogic/discovery v0.0.0-20231125164535-fe3b97e74daf/go.mod h1:A
 github.com/brotherlogic/discovery v0.0.0-20231126015046-3f77ffcd2b31/go.mod h1:MrmDTDOOQVjgmpd5YtUyw/diMCiS0dPD7+lwQ6oygr4=
 github.com/brotherlogic/discovery v0.0.0-20231127010849-58282f7f406f/go.mod h1:Ez1uVkYhJasTQRmph8Fdg/txVf/OOyJqdan86UvzRMY=
 github.com/brotherlogic/discovery v0.0.0-20231127012344-5354935d2c3e/go.mod h1:fv8NakN5RWP5tZW8yQ7qA4x7EaL7eM79jTmdxNK1igE=
-github.com/brotherlogic/discovery v0.0.0-20231127025249-bf72f4780b6b h1:bS8tkYrnPJhXE/tya0PltT8PkrEVB4NgDMGNen+7hjU=
 github.com/brotherlogic/discovery v0.0.0-20231127025249-bf72f4780b6b/go.mod h1:exHM2keEfjeqNmwrF1XHbciLJW3b1nNYHcFNY8gnOYM=
+github.com/brotherlogic/discovery v0.0.0-20231204033626-83e87ea43bb8 h1:NQJfXPQc5irIZxNt5VDGVqaNXWu8iXckV/BqWoc8aaI=
+github.com/brotherlogic/discovery v0.0.0-20231204033626-83e87ea43bb8/go.mod h1:kY6zGDaDQNGFGhu/fqvLIx6mvFyF8Y5A3KgJak4ONIk=
 github.com/brotherlogic/dstore v0.0.0-20210705011309-803d7db560a6/go.mod h1:SJdI/5dxubp66yy6slmUfen5yCIKXFvAmMs71u9xVrk=
 github.com/brotherlogic/dstore v0.0.0-20210728181450-e87a34c62535/go.mod h1:bwiN0EPWhmDNwue1BWpCQ7DL4hLwfDwDw8JwMMgDzCs=
 github.com/brotherlogic/dstore v0.0.0-20210911232556-7a6844e1f86f/go.mod h1:Wilk+LrYLvE5+fNDXp0dYQNTMxhb6rmkwv5GwZ/K3ok=
