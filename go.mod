@@ -4,7 +4,7 @@ go 1.16
 
 require (
 	firebase.google.com/go v3.13.0+incompatible
-	github.com/brotherlogic/buildserver v0.0.0-20231213174116-1253c0029be5 // indirect
+	github.com/brotherlogic/gobuildslave v0.0.0-20231213194136-346fbf2eebb1 // indirect
 	github.com/brotherlogic/goserver v0.0.0-20230726200050-779ae6811580
 	github.com/brotherlogic/keystore v0.0.0-20231211160536-3f9d38f29eed
 	github.com/golang/protobuf v1.5.3
