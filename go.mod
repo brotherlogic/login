@@ -8,7 +8,7 @@ require (
 	github.com/brotherlogic/keystore v0.0.0-20240508161349-814b3200b126
 	github.com/golang/protobuf v1.5.4
 	golang.org/x/net v0.26.0
-	google.golang.org/api v0.184.0
+	google.golang.org/api v0.185.0
 	google.golang.org/grpc v1.64.0
 	google.golang.org/protobuf v1.34.2
 )
@@ -23,15 +23,15 @@ require (
 	cloud.google.com/go/longrunning v0.5.7 // indirect
 	cloud.google.com/go/storage v1.42.0 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
-	github.com/brotherlogic/buildserver v0.0.0-20240610055049-9eb455c8b4c5 // indirect
-	github.com/brotherlogic/datastore v0.0.0-20240606202911-eef2242080b4 // indirect
-	github.com/brotherlogic/discovery v0.0.0-20240613190632-3ce3672df0f0 // indirect
-	github.com/brotherlogic/dstore v0.0.0-20240610143847-bef6ff94227c // indirect
-	github.com/brotherlogic/githubcard v0.0.0-20240611222821-660323b6ab72 // indirect
+	github.com/brotherlogic/buildserver v0.0.0-20240617060111-06b6a5ad0ac9 // indirect
+	github.com/brotherlogic/datastore v0.0.0-20240620233055-1fcd2d5e0312 // indirect
+	github.com/brotherlogic/discovery v0.0.0-20240620232840-7fd7cdb7ff34 // indirect
+	github.com/brotherlogic/dstore v0.0.0-20240620232851-5248fbdce829 // indirect
+	github.com/brotherlogic/githubcard v0.0.0-20240618232944-40a669976fff // indirect
 	github.com/brotherlogic/githubridge v0.2802.0 // indirect
-	github.com/brotherlogic/gobuildslave v0.0.0-20240607001729-c4d41cdf09a6 // indirect
-	github.com/brotherlogic/lock v0.0.0-20240606202836-9ff61102ab2b // indirect
-	github.com/brotherlogic/logging v0.0.0-20240613181609-f2db3e46ea63 // indirect
+	github.com/brotherlogic/gobuildslave v0.0.0-20240614002938-8932b7e33f86 // indirect
+	github.com/brotherlogic/lock v0.0.0-20240620211947-46a549a40fee // indirect
+	github.com/brotherlogic/logging v0.0.0-20240620232858-867ae93f9dbb // indirect
 	github.com/brotherlogic/monitor v0.0.0-20221025152653-c10877c5f9e6 // indirect
 	github.com/brotherlogic/versionserver v0.0.0-20221025154054-c9bcd41be2f2 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
@@ -42,7 +42,7 @@ require (
 	github.com/google/s2a-go v0.1.7 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/googleapis/enterprise-certificate-proxy v0.3.2 // indirect
-	github.com/googleapis/gax-go/v2 v2.12.4 // indirect
+	github.com/googleapis/gax-go/v2 v2.12.5 // indirect
 	github.com/mitchellh/go-ps v1.0.0 // indirect
 	github.com/prometheus/client_golang v1.19.1 // indirect
 	github.com/prometheus/client_model v0.6.1 // indirect
@@ -62,7 +62,7 @@ require (
 	golang.org/x/text v0.16.0 // indirect
 	golang.org/x/time v0.5.0 // indirect
 	google.golang.org/appengine v1.6.8 // indirect
-	google.golang.org/genproto v0.0.0-20240610135401-a8a62080eff3 // indirect
-	google.golang.org/genproto/googleapis/api v0.0.0-20240610135401-a8a62080eff3 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20240610135401-a8a62080eff3 // indirect
+	google.golang.org/genproto v0.0.0-20240617180043-68d350f18fd4 // indirect
+	google.golang.org/genproto/googleapis/api v0.0.0-20240617180043-68d350f18fd4 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20240617180043-68d350f18fd4 // indirect
 )
