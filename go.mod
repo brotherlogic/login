@@ -23,7 +23,7 @@ require (
 	cloud.google.com/go/longrunning v0.5.8 // indirect
 	cloud.google.com/go/storage v1.42.0 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
-	github.com/brotherlogic/buildserver v0.0.0-20240628204613-564342c3ac2c // indirect
+	github.com/brotherlogic/buildserver v0.0.0-20240628205725-47ae2b42e294 // indirect
 	github.com/brotherlogic/datastore v0.0.0-20240628021910-0ede9e3643aa // indirect
 	github.com/brotherlogic/discovery v0.0.0-20240628200643-dcf050d5855d // indirect
 	github.com/brotherlogic/dstore v0.0.0-20240628163337-2373836da42f // indirect
