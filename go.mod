@@ -15,7 +15,7 @@ require (
 
 require (
 	cloud.google.com/go v0.115.0 // indirect
-	cloud.google.com/go/auth v0.7.1 // indirect
+	cloud.google.com/go/auth v0.7.2 // indirect
 	cloud.google.com/go/auth/oauth2adapt v0.2.3 // indirect
 	cloud.google.com/go/compute/metadata v0.5.0 // indirect
 	cloud.google.com/go/firestore v1.15.0 // indirect
@@ -23,15 +23,15 @@ require (
 	cloud.google.com/go/longrunning v0.5.10 // indirect
 	cloud.google.com/go/storage v1.43.0 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
-	github.com/brotherlogic/buildserver v0.0.0-20240712230902-3eca63f96e88 // indirect
-	github.com/brotherlogic/datastore v0.0.0-20240712025237-0166a6618dac // indirect
-	github.com/brotherlogic/discovery v0.0.0-20240708161113-0bb9cf92cda7 // indirect
-	github.com/brotherlogic/dstore v0.0.0-20240712175918-ed573b257ee6 // indirect
-	github.com/brotherlogic/githubcard v0.0.0-20240708161634-4330cb07f5a9 // indirect
+	github.com/brotherlogic/buildserver v0.0.0-20240719232134-a2f93a4433e1 // indirect
+	github.com/brotherlogic/datastore v0.0.0-20240719030010-46c4c4f35542 // indirect
+	github.com/brotherlogic/discovery v0.0.0-20240715163650-e8ab9c1d4b5d // indirect
+	github.com/brotherlogic/dstore v0.0.0-20240719181624-24f91729abb2 // indirect
+	github.com/brotherlogic/githubcard v0.0.0-20240715164647-186dacf3f197 // indirect
 	github.com/brotherlogic/githubridge v0.2802.0 // indirect
-	github.com/brotherlogic/gobuildslave v0.0.0-20240714210717-0971582f6c06 // indirect
-	github.com/brotherlogic/lock v0.0.0-20240708141351-e8898938fa10 // indirect
-	github.com/brotherlogic/logging v0.0.0-20240712201917-1ba05a23469b // indirect
+	github.com/brotherlogic/gobuildslave v0.0.0-20240721211408-9dc5c4e02efe // indirect
+	github.com/brotherlogic/lock v0.0.0-20240715144354-2b5e4e1a7e41 // indirect
+	github.com/brotherlogic/logging v0.0.0-20240719203012-54cf6f89ed51 // indirect
 	github.com/brotherlogic/monitor v0.0.0-20221025152653-c10877c5f9e6 // indirect
 	github.com/brotherlogic/versionserver v0.0.0-20221025154054-c9bcd41be2f2 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
@@ -63,7 +63,7 @@ require (
 	golang.org/x/text v0.16.0 // indirect
 	golang.org/x/time v0.5.0 // indirect
 	google.golang.org/appengine v1.6.8 // indirect
-	google.golang.org/genproto v0.0.0-20240711142825-46eb208f015d // indirect
-	google.golang.org/genproto/googleapis/api v0.0.0-20240711142825-46eb208f015d // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20240711142825-46eb208f015d // indirect
+	google.golang.org/genproto v0.0.0-20240722135656-d784300faade // indirect
+	google.golang.org/genproto/googleapis/api v0.0.0-20240722135656-d784300faade // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20240722135656-d784300faade // indirect
 )
