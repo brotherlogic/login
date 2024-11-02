@@ -30,7 +30,7 @@ require (
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/metric v0.49.0 // indirect
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/internal/resourcemapping v0.49.0 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
-	github.com/brotherlogic/buildserver v0.0.0-20241026060224-976226f2f769 // indirect
+	github.com/brotherlogic/buildserver v0.0.0-20241102065233-4b343ef7ee3c // indirect
 	github.com/brotherlogic/datastore v0.0.0-20240830190304-3b849e438317 // indirect
 	github.com/brotherlogic/discovery v0.0.0-20241026180659-08adb0a0063f // indirect
 	github.com/brotherlogic/dstore v0.0.0-20241102021053-fd51520579ab // indirect
