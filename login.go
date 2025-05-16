@@ -2,16 +2,11 @@ package main
 
 import (
 	"flag"
-	"fmt"
 	"io/ioutil"
 	"log"
-	"net/http"
 
-	firebase "firebase.google.com/go"
 	"github.com/brotherlogic/goserver"
 	"golang.org/x/net/context"
-	oauth2 "google.golang.org/api/oauth2/v1"
-	"google.golang.org/api/option"
 	"google.golang.org/grpc"
 
 	pbg "github.com/brotherlogic/goserver/proto"
@@ -26,7 +21,7 @@ const (
 	USERS = "github.com/brotherlogic/login/users"
 )
 
-//Server main server type
+// Server main server type
 type Server struct {
 	*goserver.GoServer
 }
@@ -67,56 +62,11 @@ func (s *Server) GetState() []*pbg.State {
 }
 
 func (s *Server) verifyFirebaseToken(ctx context.Context, tokenStr string) (string, error) {
-	data, _, err := s.KSclient.Read(ctx, CONFIG, &pb.Config{})
-	if err != nil {
-		s.CtxLog(ctx, fmt.Sprintf("Err %v", err))
-		return "", err
-	}
-	conf := data.(*pb.Config)
-
-	opt := option.WithCredentialsJSON([]byte(conf.GetAuthToken()))
-	config := &firebase.Config{ProjectID: "androidgetter-d1c08"}
-	app, err := firebase.NewApp(ctx, config, opt)
-	if err != nil {
-		s.CtxLog(ctx, fmt.Sprintf("ERR : %v", err))
-		return "", err
-	}
-
-	client, err := app.Auth(ctx)
-	if err != nil {
-		s.CtxLog(ctx, fmt.Sprintf("ERR : %v", err))
-		return "", err
-	}
-
-	token, err := client.VerifyIDToken(ctx, tokenStr)
-	if err != nil {
-		s.CtxLog(ctx, fmt.Sprintf("ERR : %v", err))
-		return "", err
-	}
-
-	tok, err := s.getToken(ctx, token.Claims["email"].(string))
-	if err != nil {
-		s.CtxLog(ctx, fmt.Sprintf("BAD TOKEN: %v", err))
-		return "", err
-	}
-
-	return tok, nil
+	return "", nil
 }
 
 func (s *Server) verifyToken(ctx context.Context, token string, firebaseToken string) (string, error) {
-	if len(firebaseToken) > 0 {
-		return s.verifyFirebaseToken(ctx, firebaseToken)
-	}
-
-	svc, err := oauth2.New(http.DefaultClient)
-	ti, err := svc.Tokeninfo().IdToken(token).Context(ctx).Do()
-	if err != nil {
-		return fmt.Sprintf("Err for token %v: %v", token, err), err
-	}
-	if ti.VerifiedEmail {
-		return ti.Email, nil
-	}
-	return fmt.Sprintf("%+v", ti), nil
+	return "", nil
 }
 
 func main() {
